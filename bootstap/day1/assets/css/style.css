@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    background-color: rgb(3, 3, 78);
+}
+
+a{
+    text-decoration: none;
+}
+
+.boxes{
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    background-color: rgba(30, 3, 104, 0.767);
+    color: white;
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px 4px whitesmoke;
+    
+}
+

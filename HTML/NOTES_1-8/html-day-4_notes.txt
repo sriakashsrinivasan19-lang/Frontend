@@ -1,0 +1,325 @@
+HTML Attributes - Detailed Notes
+
+What is an Attribute?
+An Attribute provides additional information about an HTML element.
+
+Attributes are always written inside the opening tag.
+
+Syntax
+<tagname attribute="value">
+    Content
+</tagname>
+Example
+<a href="https://google.com">
+    Google
+</a>
+Here:
+
+href = Attribute Name
+
+https://google.com = Attribute Value
+Structure of an Attribute
+<img src="image.jpg" alt="Student Image">
+Breakdown:
+
+src          → Attribute Name
+
+image.jpg    → Attribute Value
+
+alt          → Attribute Name
+
+Student Image → Attribute Value
+Why Do We Use Attributes?
+Attributes provide extra information to HTML elements.
+
+Without Attributes:
+
+<img>
+Browser doesn't know:
+
+Which image?
+Where is the image?
+With Attributes:
+
+<img src="student.jpg">
+Browser knows which image to display.
+
+Types of Attributes
+HTML Attributes are mainly divided into:
+
+1. Global Attributes
+2. Local (Element Specific) Attributes
+1. Global Attributes
+Global Attributes can be used on almost every HTML element.
+
+Example
+<h1 id="heading" class="title">
+    HTML
+</h1>
+Important Global Attributes
+id Attribute
+Used to uniquely identify an element.
+
+<h1 id="main-heading">
+    Welcome
+</h1>
+Rules
+Must be unique.
+
+One page should not contain duplicate ids.
+
+class Attribute
+Used to group multiple elements.
+
+<p class="content">
+    HTML
+</p>
+
+<p class="content">
+    CSS
+</p>
+Purpose:
+
+CSS Styling
+
+JavaScript Selection
+
+title Attribute
+Displays tooltip information.
+
+<p title="Hyper Text Markup Language">
+    HTML
+</p>
+When user hovers over HTML, tooltip appears.
+
+style Attribute
+Used for inline CSS.
+
+<h1 style="color:red;">
+    HTML
+</h1>
+hidden Attribute
+Hides an element.
+
+<p hidden>
+    Secret Content
+</p>
+draggable Attribute
+Allows dragging.
+
+<img src="html.png" draggable="true">
+lang Attribute
+Specifies document language.
+
+<html lang="en">
+Local Attributes
+Local Attributes work only on specific elements.
+
+Anchor Tag Attributes
+href
+Specifies destination URL.
+
+<a href="https://google.com">
+    Google
+</a>
+target
+Specifies where to open the link.
+
+<a href="https://google.com"
+   target="_blank">
+   Google
+</a>
+Output:
+
+Opens in a new tab
+download
+Downloads the file.
+
+<a href="resume.pdf" download>
+    Download Resume
+</a>
+Image Tag Attributes
+src
+Specifies image location.
+
+<img src="student.jpg">
+alt
+Alternative text.
+
+<img src="student.jpg"
+     alt="Student Photo">
+width
+Sets image width.
+
+<img src="student.jpg"
+     width="300">
+height
+Sets image height.
+
+<img src="student.jpg"
+     height="200">
+Input Tag Attributes
+type
+Specifies input type.
+
+<input type="text">
+Examples:
+
+<input type="email">
+<input type="password">
+<input type="number">
+<input type="date">
+<input type="file">
+placeholder
+Displays hint text.
+
+<input
+type="text"
+placeholder="Enter Name">
+required
+Makes field mandatory.
+
+<input
+type="email"
+required>
+value
+Provides default value.
+
+<input
+type="text"
+value="Sudhan">
+readonly
+User cannot edit value.
+
+<input
+type="text"
+value="HTML"
+readonly>
+disabled
+Disables input field.
+
+<input
+type="text"
+disabled>
+Form Tag Attributes
+action
+Specifies where form data goes.
+
+<form action="register.php">
+</form>
+method
+Specifies HTTP method.
+
+<form method="post">
+</form>
+Values:
+
+GET
+POST
+Table Attributes
+border
+Adds border.
+
+<table border="1">
+</table>
+cellpadding
+Space inside cells.
+
+<table cellpadding="10">
+</table>
+cellspacing
+Space between cells.
+
+<table cellspacing="5">
+</table>
+Most Important Beginner Attributes
+id
+class
+title
+style
+href
+target
+src
+alt
+width
+height
+type
+placeholder
+required
+value
+readonly
+disabled
+action
+method
+Example Using Multiple Attributes
+<a
+href="https://google.com"
+target="_blank"
+title="Open Google">
+Google
+</a>
+<img
+src="student.jpg"
+alt="Student Photo"
+width="300"
+height="200">
+<input
+type="text"
+placeholder="Enter Name"
+required>
+Difference Between Global and Local Attributes
+
+Global Attributes
+
+Work on almost all elements
+id
+class
+style
+title
+hidden
+
+Local Attributes
+
+Work on specific elements
+href
+src
+alt
+target
+type
+
+Interview Questions
+
+What is an Attribute?
+Attributes provide additional information about HTML elements.
+
+Where are Attributes Written?
+Inside the opening tag.
+
+What is the Syntax of an Attribute?
+attribute="value"
+What is the Difference Between id and class?
+id    → Unique
+
+class → Reusable
+What is href?
+Used to specify a hyperlink destination.
+
+What is src?
+Used to specify image source.
+
+What is alt?
+Alternative text displayed when image fails to load.
+
+What is placeholder?
+Displays hint text inside an input field.
+
+What is required?
+Makes an input field mandatory.
+
+What are Global Attributes?
+Attributes that can be used on almost every HTML element.
+
+What are Local Attributes?
+Attributes that work only on specific HTML elements.
+
+

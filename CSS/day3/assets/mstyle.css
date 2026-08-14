@@ -1,0 +1,46 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+        .box1{
+            width:200px;
+            height:80px;
+            background-color:lightblue;
+        }
+
+        .box2{
+            width:200px;
+            height:80px;
+            padding:20px;
+            background-color:lightgreen;
+        }
+
+        .box3{
+            width:200px;
+            height:80px;
+            padding:20px;
+            border:3px solid black;
+            background-color:lightcoral;
+        }
+
+        .box4{
+            width:200px;
+            height:80px;
+            padding:20px;
+            border:3px solid black;
+            margin:40px;
+            background-color:lightgoldenrodyellow;
+        }

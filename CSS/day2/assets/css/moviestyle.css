@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body, h1 {
+    text-align: center;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+}
+
+
+.movie {
+    background-color: lightyellow;
+    color: darkblue;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}

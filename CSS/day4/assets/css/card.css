@@ -1,0 +1,47 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+        body{
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .card{
+            width: 180px;
+            height: 200px;
+            background-color: lightblue;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hide{
+            display: none;
+        }

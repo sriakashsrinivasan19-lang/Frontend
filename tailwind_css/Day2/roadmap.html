@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career & Learning Roadmap — AI Learn Enterprise</title>
+    <meta name="description" content="Structured technical career pathways for AI Engineers, GenAI Specialists, Computer Vision Researchers, and ML Ops.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Enterprise Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body data-page="roadmap" class="bg-[#060813] text-slate-200 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-300 overflow-x-hidden min-h-screen relative">
+
+    <canvas id="neuralCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-30"></canvas>
+
+    <div class="glow-sphere w-96 h-96 bg-cyan-500/10 top-0 left-1/4"></div>
+    <div class="glow-sphere w-96 h-96 bg-purple-600/10 bottom-1/4 right-10"></div>
+
+    <!-- GLOBAL NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="globalNavbar"></header>
+
+    <main class="relative z-10 pt-28 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20">
+                    Engineering Pathways
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight">
+                    AI Career & <span class="text-gradient">Technical Roadmap</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Step-by-step milestones to transition from beginner fundamentals to specialized production roles in modern artificial intelligence.
+                </p>
+            </div>
+
+            <!-- Role Pathway Selector Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-16">
+                <button onclick="switchRoadmap('mle')" id="tab-mle" class="roadmap-tab-btn px-4 py-2 rounded-xl text-xs font-medium bg-cyan-400/20 text-cyan-400 border border-cyan-400/40">
+                    AI & ML Engineer
+                </button>
+                <button onclick="switchRoadmap('genai')" id="tab-genai" class="roadmap-tab-btn px-4 py-2 rounded-xl text-xs font-medium bg-white/5 text-slate-300 border border-white/10 hover:text-white">
+                    Generative AI & LLM Specialist
+                </button>
+                <button onclick="switchRoadmap('cv')" id="tab-cv" class="roadmap-tab-btn px-4 py-2 rounded-xl text-xs font-medium bg-white/5 text-slate-300 border border-white/10 hover:text-white">
+                    Computer Vision Engineer
+                </button>
+            </div>
+
+            <!-- Roadmap Pathway Container (ML Engineer Track) -->
+            <div id="roadmapViewContainer" class="relative max-w-4xl mx-auto">
+                <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-1 roadmap-line rounded-full opacity-60"></div>
+
+                <!-- Milestone 1 -->
+                <div class="relative mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="md:text-right space-y-2 order-2 md:order-1">
+                        <span class="text-xs font-mono font-bold text-cyan-400 px-2.5 py-1 rounded bg-cyan-400/10 border border-cyan-400/30">PHASE 01</span>
+                        <h3 class="text-xl font-display font-bold text-white">Mathematics & Python Foundations</h3>
+                        <p class="text-xs text-slate-400">Master Linear Algebra (eigenvalues, matrix multiplications), Multivariate Calculus (partial derivatives), and probability distributions.</p>
+                        <div class="pt-2 text-xs font-mono text-cyan-300">
+                            <strong>Stack:</strong> Python 3.11, NumPy, Pandas, SciPy
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-start order-2">
+                        <div class="w-12 h-12 rounded-2xl bg-[#060813] border-2 border-cyan-400 text-cyan-400 font-bold font-mono flex items-center justify-center -ml-6 z-10 shadow-lg shadow-cyan-500/30">
+                            01
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="relative mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="hidden md:flex justify-end order-1">
+                        <div class="w-12 h-12 rounded-2xl bg-[#060813] border-2 border-blue-400 text-blue-400 font-bold font-mono flex items-center justify-center -mr-6 z-10 shadow-lg shadow-blue-500/30">
+                            02
+                        </div>
+                    </div>
+                    <div class="space-y-2 order-2">
+                        <span class="text-xs font-mono font-bold text-blue-400 px-2.5 py-1 rounded bg-blue-400/10 border border-blue-400/30">PHASE 02</span>
+                        <h3 class="text-xl font-display font-bold text-white">Statistical Machine Learning</h3>
+                        <p class="text-xs text-slate-400">Implement Supervised algorithms (Regression, Trees, SVMs), Unsupervised clustering, cross-validation, and ROC-AUC evaluation curves.</p>
+                        <div class="pt-2 text-xs font-mono text-blue-300">
+                            <strong>Stack:</strong> Scikit-Learn, XGBoost, LightGBM, Matplotlib
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="relative mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="md:text-right space-y-2 order-2 md:order-1">
+                        <span class="text-xs font-mono font-bold text-purple-400 px-2.5 py-1 rounded bg-purple-400/10 border border-purple-400/30">PHASE 03</span>
+                        <h3 class="text-xl font-display font-bold text-white">Deep Learning & Tensor Compute</h3>
+                        <p class="text-xs text-slate-400">Build Artificial Neural Networks, loss optimization with Adam, convolutional filters, and GPU memory batch management.</p>
+                        <div class="pt-2 text-xs font-mono text-purple-300">
+                            <strong>Stack:</strong> PyTorch 2.4, CUDA, TensorBoard, Hugging Face
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-start order-2">
+                        <div class="w-12 h-12 rounded-2xl bg-[#060813] border-2 border-purple-400 text-purple-400 font-bold font-mono flex items-center justify-center -ml-6 z-10 shadow-lg shadow-purple-500/30">
+                            03
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="relative mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="hidden md:flex justify-end order-1">
+                        <div class="w-12 h-12 rounded-2xl bg-[#060813] border-2 border-pink-400 text-pink-400 font-bold font-mono flex items-center justify-center -mr-6 z-10 shadow-lg shadow-pink-500/30">
+                            04
+                        </div>
+                    </div>
+                    <div class="space-y-2 order-2">
+                        <span class="text-xs font-mono font-bold text-pink-400 px-2.5 py-1 rounded bg-pink-400/10 border border-pink-400/30">PHASE 04</span>
+                        <h3 class="text-xl font-display font-bold text-white">Generative Models & LLM Fine-Tuning</h3>
+                        <p class="text-xs text-slate-400">Learn LoRA / QLoRA parameter-efficient fine tuning, Vector embeddings, RAG indexing, and agent tool execution loops.</p>
+                        <div class="pt-2 text-xs font-mono text-pink-300">
+                            <strong>Stack:</strong> Transformers, vLLM, LangChain, Pinecone, ChromaDB
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="md:text-right space-y-2 order-2 md:order-1">
+                        <span class="text-xs font-mono font-bold text-emerald-400 px-2.5 py-1 rounded bg-emerald-400/10 border border-emerald-400/30">PHASE 05</span>
+                        <h3 class="text-xl font-display font-bold text-white">MLOps, Scaling & Governance</h3>
+                        <p class="text-xs text-slate-400">Deploy sub-millisecond inference microservices, model registry monitoring, data drift alarms, and ethical safety guardrails.</p>
+                        <div class="pt-2 text-xs font-mono text-emerald-300">
+                            <strong>Stack:</strong> Docker, Kubernetes, MLflow, FastAPI, Triton Server
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-start order-2">
+                        <div class="w-12 h-12 rounded-2xl bg-[#060813] border-2 border-emerald-400 text-emerald-400 font-bold font-mono flex items-center justify-center -ml-6 z-10 shadow-lg shadow-emerald-500/30">
+                            05
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="bg-[#060813] border-t border-white/10 relative z-10 pt-16 pb-12" id="globalFooter"></footer>
+
+    <!-- MVC ARCHITECTURE SCRIPTS -->
+    <script src="assets/js/views/UIComponents.js"></script>
+    <script src="assets/js/views/ParticleCanvas.js"></script>
+    <script src="assets/js/services/StorageService.js"></script>
+    <script src="assets/js/controllers/NavigationController.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        function switchRoadmap(roleKey) {
+            const btns = document.querySelectorAll('.roadmap-tab-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('bg-cyan-400/20', 'text-cyan-400', 'border-cyan-400/40');
+                btn.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+            });
+            const activeBtn = document.getElementById('tab-' + roleKey);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+                activeBtn.classList.add('bg-cyan-400/20', 'text-cyan-400', 'border-cyan-400/40');
+            }
+            if (window.NavigationController) {
+                window.NavigationController.showToast(`Switched pathway focus to: ${roleKey.toUpperCase()}`, 'map');
+            }
+        }
+    </script>
+</body>
+</html>

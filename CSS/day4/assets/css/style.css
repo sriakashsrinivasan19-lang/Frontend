@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+        span{
+            display: inline-block;
+            width: 180px;
+            height: 100px;
+            background-color: lightblue;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }

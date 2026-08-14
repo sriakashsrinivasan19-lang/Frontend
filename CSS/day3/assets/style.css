@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.box{
+   background-color:rgb(247, 247, 206);
+   width: 400px;
+   height: 450px;
+   padding: 30px; 
+   border: 2px solid black;
+   border-radius: 10px; 
+   margin: 450px;
+   text-align: center;
+   box-sizing: border-box;
+    
+}
+
+h1{
+    color: rgb(248, 37, 37);
+
+}
+h2{
+    color: blue;
+}
+img{
+    width: 180px;
+    height: 185px;
+}

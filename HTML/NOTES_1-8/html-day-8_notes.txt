@@ -1,0 +1,528 @@
+HTML Document Setup – DOCTYPE, HTML5, lang, Meta Tags, UTF-8 Complete Notes
+
+Introduction
+Every HTML page starts with a basic document structure.
+
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+
+</body>
+</html>
+Every line has a specific purpose. Let's understand each one in detail.
+
+1. What is ?
+Definition
+<!DOCTYPE html> is called the Document Type Declaration.
+
+It tells the browser that the document is written using HTML5.
+
+Why Do We Need DOCTYPE?
+Before HTML5, browsers used different rendering modes.
+
+Without DOCTYPE:
+
+Browser may enter Quirks Mode
+
+Old browser behavior is used
+
+CSS may not work correctly
+
+Layout may break
+
+With DOCTYPE:
+
+Browser enters Standards Mode
+
+HTML5 and CSS behave correctly
+
+Same output across modern browsers
+
+Syntax
+<!DOCTYPE html>
+Why is it not a Tag?
+DOCTYPE is not an HTML tag.
+
+It is a declaration that is read before the HTML document begins.
+
+History of DOCTYPE
+HTML 4.01
+DOCTYPE was very long.
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+HTML5
+Simplified to:
+
+<!DOCTYPE html>
+Interview Question
+Why do we use DOCTYPE?
+DOCTYPE tells the browser to render the page using HTML5 standards.
+
+2. What is HTML?
+Full Form
+HTML = HyperText Markup Language
+HyperText
+HyperText means text connected using hyperlinks.
+
+Example
+
+Google → YouTube → Gmail
+One page connects to another page.
+
+Markup
+Markup means adding tags to describe content.
+
+Example
+
+<h1>Welcome</h1>
+<h1> is a markup tag.
+
+Language
+HTML is called a language because it follows predefined rules and syntax to describe webpage structure.
+
+Why HTML?
+HTML provides structure for webpages.
+
+It defines:
+
+Headings
+
+Paragraphs
+
+Images
+
+Links
+
+Forms
+
+Tables
+
+Videos
+
+What is HTML5?
+HTML5 is the fifth version of HTML.
+
+Released to support modern web applications.
+
+Features of HTML5
+Semantic Tags
+
+Audio Tag
+
+Video Tag
+
+Canvas
+
+SVG
+
+Local Storage
+
+Session Storage
+
+Geolocation
+
+Drag and Drop
+
+New Form Controls
+
+Difference Between HTML and HTML5
+HTML
+
+HTML5
+
+Older Version
+
+Latest Version
+
+Less Semantic
+
+Semantic Tags
+
+No Audio
+
+Audio Supported
+
+No Video
+
+Video Supported
+
+No Canvas
+
+Canvas Supported
+
+Less Form Controls
+
+More Input Types
+
+3. What is lang Attribute?
+Example
+
+<html lang="en">
+Purpose
+Specifies the language of the webpage.
+
+Why Use lang?
+Benefits
+
+Accessibility
+
+SEO
+
+Screen Readers
+
+Search Engines
+
+Examples
+English
+
+<html lang="en">
+Tamil
+
+<html lang="ta">
+Hindi
+
+<html lang="hi">
+French
+
+<html lang="fr">
+4. Meta Tag
+What is Meta?
+Meta means information about information.
+
+Meta tags provide information about the webpage.
+
+Users cannot see Meta tags.
+
+Browsers and search engines read them.
+
+Syntax
+<meta>
+Why Meta Tags?
+Meta tags help:
+
+Browser
+
+Google
+
+Bing
+
+Facebook
+
+LinkedIn
+
+Twitter
+
+Screen Readers
+
+understand your webpage.
+
+Common Meta Tags
+charset
+<meta charset="UTF-8">
+Purpose
+
+Defines character encoding.
+
+What is UTF?
+Full Form
+
+Unicode Transformation Format
+What is Unicode?
+Unicode is a worldwide standard that assigns a unique number to every character.
+
+Examples
+
+A
+B
+தமிழ்
+日本語
+😊
+€
+₹
+Why UTF-8?
+UTF-8 supports almost every language.
+
+Without UTF-8
+
+தமிழ்
+may appear as
+
+    
+Why "8" in UTF-8?
+The number 8 refers to an 8-bit unit (1 byte).
+
+UTF-8 stores characters using 1 to 4 bytes.
+
+English letters usually use 1 byte (8 bits).
+
+Other languages and emojis may use 2, 3, or 4 bytes.
+
+What is a Bit?
+A Bit is the smallest unit of data.
+
+0
+1
+Only two values.
+
+8 Bits
+8 Bits = 1 Byte
+Example
+
+01000001
+Represents
+
+A
+What is 64-bit?
+64-bit refers to the processor or operating system architecture.
+
+64 Bits = 8 Bytes
+A 64-bit CPU can process more data at once and access much more memory than a 32-bit CPU.
+
+This is different from UTF-8. The "8" in UTF-8 refers to bytes used for encoding text, while "64-bit" refers to CPU architecture.
+
+Meta Charset
+<meta charset="UTF-8">
+Must be placed near the top of the <head> section.
+
+viewport
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+Purpose
+
+Makes webpages responsive.
+
+width=device-width
+Uses the full width of the current device.
+
+initial-scale=1.0
+Initial zoom level is 100%.
+
+description
+<meta
+name="description"
+content="HTML Complete Tutorial">
+Used by search engines.
+
+keywords
+<meta
+name="keywords"
+content="HTML,CSS,JavaScript">
+Historically used for SEO. Modern search engines give it little or no ranking value.
+
+author
+<meta
+name="author"
+content="Sudhan">
+Specifies page author.
+
+robots
+<meta
+name="robots"
+content="index,follow">
+Common Values
+
+index
+
+noindex
+
+follow
+
+nofollow
+refresh
+<meta
+http-equiv="refresh"
+content="5">
+Refreshes page after 5 seconds.
+
+Redirect example
+
+<meta
+http-equiv="refresh"
+content="5;url=https://google.com">
+http-equiv
+Simulates HTTP response headers.
+
+Example
+
+<meta
+http-equiv="X-UA-Compatible"
+content="IE=edge">
+Historically used for older versions of Internet Explorer.
+
+Open Graph (OG)
+What is OG?
+OG stands for
+
+Open Graph
+Created by Facebook.
+
+It controls how your webpage looks when shared on social media.
+
+og:title
+<meta
+property="og:title"
+content="HTML Course">
+og:description
+<meta
+property="og:description"
+content="Complete HTML Tutorial">
+og:image
+<meta
+property="og:image"
+content="banner.jpg">
+og:url
+<meta
+property="og:url"
+content="https://example.com">
+og:type
+<meta
+property="og:type"
+content="website">
+Common Values
+
+website
+
+article
+
+video.movie
+
+profile
+Twitter Card Meta Tags
+<meta
+name="twitter:card"
+content="summary_large_image">
+
+<meta
+name="twitter:title"
+content="HTML Tutorial">
+
+<meta
+name="twitter:description"
+content="Learn HTML">
+
+<meta
+name="twitter:image"
+content="banner.jpg">
+These control how a page appears when shared on X (Twitter).
+
+Meta Tag Attributes
+charset
+Character encoding.
+
+name
+Used for metadata such as:
+
+description
+
+keywords
+
+author
+
+viewport
+
+robots
+
+twitter:card
+content
+Stores the value.
+
+Example
+
+content="HTML Tutorial"
+property
+Used mainly for Open Graph metadata.
+
+Example
+
+property="og:title"
+http-equiv
+Represents HTTP response information.
+
+Complete Head Example
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Complete HTML Notes">
+
+<meta
+name="keywords"
+content="HTML,CSS,JavaScript">
+
+<meta
+name="author"
+content="Sudhan">
+
+<meta
+name="robots"
+content="index,follow">
+
+<meta
+property="og:title"
+content="HTML Course">
+
+<meta
+property="og:description"
+content="Learn HTML">
+
+<meta
+property="og:image"
+content="banner.jpg">
+
+<meta
+property="og:url"
+content="https://example.com">
+
+<title>HTML Notes</title>
+
+</head>
+Interview Questions
+What is DOCTYPE?
+DOCTYPE tells the browser to use HTML5 standards while rendering the webpage.
+
+What is HTML?
+HTML stands for HyperText Markup Language and provides the structure of webpages.
+
+What is HTML5?
+HTML5 is the latest major version of HTML that supports semantic elements, multimedia, and modern web features.
+
+What is lang?
+The lang attribute specifies the language of the webpage.
+
+What is a Meta Tag?
+Meta tags provide information about the webpage for browsers, search engines, and social media platforms.
+
+What is UTF-8?
+UTF-8 (Unicode Transformation Format - 8-bit) is a character encoding standard that supports almost every language and symbol.
+
+What is Open Graph?
+Open Graph is a metadata protocol that controls how webpages appear when shared on social media.
+
+Name Important Meta Tags.
+charset
+viewport
+description
+keywords
+author
+robots
+refresh
+http-equiv
+og:title
+og:description
+og:image
+og:url
+twitter:card

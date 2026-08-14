@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.dress{
+    background-color: beige;
+    width: 300px;
+    height: 400px;
+    padding:30px;
+    border: 2px solid black;
+    margin: 200px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+img{
+    width:200px;
+    height:185px;
+}
+
+.button{
+    background-color: blue;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin:auto;
+    
+}

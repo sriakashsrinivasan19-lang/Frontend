@@ -1,0 +1,23 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+#hospital {
+    background-color: darkred;
+    color: white;
+    padding: 15px;
+}
+
+
+.details {
+    background-color: white;
+    color: black;
+    width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid darkred;
+    border-radius: 10px;
+}

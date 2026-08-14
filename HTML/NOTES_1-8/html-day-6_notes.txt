@@ -1,0 +1,468 @@
+HTML Forms - Complete Notes
+
+What is a Form?
+An HTML Form is used to collect user information and send it to a server.
+
+Examples:
+
+Login Form
+
+Registration Form
+
+Contact Form
+
+Feedback Form
+
+Job Application Form
+
+Payment Form
+
+Why Do We Use Forms?
+Forms allow users to enter data such as:
+
+Name
+
+Email
+
+Password
+
+Phone Number
+
+Address
+
+Date of Birth
+
+Resume Upload
+
+Feedback
+
+Basic Form Syntax
+<form action="" method="">
+
+</form>
+Form Attributes
+action
+Specifies where the form data should be sent.
+
+<form action="register.php">
+method
+Specifies how the data is sent.
+
+<form method="get">
+or
+
+<form method="post">
+GET
+Data visible in URL
+
+Used for search
+
+POST
+Data hidden
+
+Used for Login, Registration, Payment
+
+autocomplete
+Turns browser suggestions ON or OFF.
+
+<form autocomplete="on">
+<form autocomplete="off">
+enctype
+Used while uploading files.
+
+<form enctype="multipart/form-data">
+novalidate
+Disables HTML validation.
+
+<form novalidate>
+Form Elements
+1. input
+Most commonly used form element.
+
+Syntax
+
+<input type="">
+Input Types
+text
+<input type="text">
+Used for:
+
+Name
+
+City
+
+College
+
+password
+<input type="password">
+email
+<input type="email">
+number
+<input type="number">
+tel
+<input type="tel">
+url
+<input type="url">
+search
+<input type="search">
+date
+<input type="date">
+datetime-local
+<input type="datetime-local">
+time
+<input type="time">
+month
+<input type="month">
+week
+<input type="week">
+color
+<input type="color">
+range
+<input type="range">
+checkbox
+<input type="checkbox">
+Multiple selections allowed.
+
+radio
+<input type="radio">
+Single selection.
+
+file
+<input type="file">
+image
+<input type="image">
+hidden
+<input type="hidden">
+submit
+<input type="submit">
+reset
+<input type="reset">
+button
+<input type="button">
+Input Attributes
+id
+Unique identification.
+
+<input id="username">
+name
+Used to send data to server.
+
+<input name="username">
+value
+Default value.
+
+<input value="Sudhan">
+placeholder
+Hint text.
+
+<input placeholder="Enter Name">
+required
+Mandatory field.
+
+<input required>
+readonly
+Cannot edit.
+
+<input readonly>
+disabled
+Disabled field.
+
+<input disabled>
+maxlength
+Maximum characters.
+
+<input maxlength="20">
+minlength
+Minimum characters.
+
+<input minlength="5">
+min
+Minimum number.
+
+<input min="1">
+max
+Maximum number.
+
+<input max="100">
+step
+Number increment.
+
+<input step="5">
+checked
+Default selected.
+
+<input type="checkbox" checked>
+multiple
+Multiple file selection.
+
+<input type="file" multiple>
+accept
+Accept specific files.
+
+<input type="file" accept=".pdf">
+autofocus
+Focus automatically.
+
+<input autofocus>
+pattern
+Validation using Regular Expression.
+
+<input pattern="[A-Za-z]+">
+label
+Used to label input fields.
+
+<label>Name</label>
+textarea
+Multi-line input.
+
+<textarea></textarea>
+Attributes
+
+rows
+cols
+placeholder
+readonly
+disabled
+maxlength
+Example
+
+<textarea rows="5" cols="30"></textarea>
+select
+Dropdown.
+
+<select>
+
+</select>
+option
+Dropdown items.
+
+<select>
+
+<option>HTML</option>
+
+<option>CSS</option>
+
+<option>React</option>
+
+</select>
+optgroup
+Groups options.
+
+<select>
+
+<optgroup label="Frontend">
+
+<option>HTML</option>
+
+<option>CSS</option>
+
+</optgroup>
+
+</select>
+Select Attributes
+multiple
+required
+disabled
+size
+Example
+
+<select multiple>
+
+</select>
+button
+<button>Click</button>
+Types
+
+<button type="submit">
+<button type="reset">
+<button type="button">
+fieldset
+Groups form controls.
+
+<fieldset>
+
+</fieldset>
+legend
+Title for fieldset.
+
+<legend>Student Details</legend>
+datalist
+Auto suggestions.
+
+<input list="courses">
+
+<datalist id="courses">
+
+<option value="HTML">
+
+<option value="React">
+
+</datalist>
+output
+Displays calculated result.
+
+<output></output>
+meter
+Displays measurement.
+
+<meter value="70" min="0" max="100"></meter>
+progress
+Progress bar.
+
+<progress value="60" max="100"></progress>
+Important Form Elements
+form
+input
+label
+textarea
+select
+option
+optgroup
+button
+fieldset
+legend
+datalist
+output
+meter
+progress
+Most Important Input Types
+text
+password
+email
+number
+tel
+url
+search
+date
+time
+datetime-local
+month
+week
+radio
+checkbox
+file
+submit
+reset
+button
+hidden
+range
+color
+Most Important Attributes
+Global Attributes
+id
+class
+style
+title
+hidden
+lang
+dir
+tabindex
+draggable
+Form Attributes
+action
+method
+autocomplete
+enctype
+novalidate
+Input Attributes
+type
+name
+value
+placeholder
+required
+readonly
+disabled
+maxlength
+minlength
+min
+max
+step
+checked
+multiple
+accept
+autofocus
+pattern
+Select Attributes
+multiple
+required
+disabled
+size
+Textarea Attributes
+rows
+cols
+placeholder
+maxlength
+readonly
+disabled
+Interview Questions
+What is a Form?
+A Form is used to collect user data and send it to the server.
+
+Difference Between GET and POST?
+GET
+
+Data visible in URL.
+
+Less secure.
+
+POST
+
+Data hidden.
+
+More secure.
+
+What is Placeholder?
+Displays hint text inside an input field.
+
+Difference Between readonly and disabled?
+readonly
+
+Value visible.
+
+Can be submitted.
+
+Cannot edit.
+
+disabled
+
+Value visible.
+
+Cannot edit.
+
+Not submitted.
+
+Difference Between Radio and Checkbox?
+Radio
+
+Single selection.
+
+Checkbox
+
+Multiple selections.
+
+Difference Between Button and Submit?
+Button
+
+Performs custom actions.
+
+Submit
+
+Sends form data to the server.
+
+Difference Between Select and Datalist?
+Select
+
+Fixed dropdown options.
+
+Datalist
+
+User can type or choose suggestions.
+
+Difference Between Meter and Progress?
+Meter
+
+Displays a measured value.
+
+Progress
+
+Displays task completion progress.

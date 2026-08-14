@@ -1,0 +1,312 @@
+HTML - Day 1 Notes
+
+What is HTML?
+HTML stands for Hyper Text Markup Language.
+
+HTML is the standard markup language used to create web pages. It provides the structure of a website and tells the browser how content should be displayed.
+
+Why Do We Use HTML?
+To create web pages.
+
+To display text, images, videos, tables, and forms.
+
+To organize content in a structured way.
+
+To build the foundation of every website.
+
+Real World Examples
+Google Search Page
+
+YouTube
+
+Amazon
+
+Facebook
+
+Instagram
+
+All websites use HTML as their basic structure.
+
+How Does HTML Work?
+HTML File
+    ↓
+Browser Reads HTML
+    ↓
+Creates DOM Structure
+    ↓
+Displays Content
+Example:
+
+<h1>Hello World</h1>
+Output:
+
+Hello World
+Basic HTML Structure
+Every HTML document follows a standard structure.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Page</title>
+</head>
+<body>
+    <h1>Welcome to HTML</h1>
+</body>
+</html>
+Understanding the Structure
+1.
+<!DOCTYPE html>
+Purpose:
+
+Tells the browser that this document uses HTML5.
+
+Must be the first line of every HTML document.
+
+2. Root Element
+<html>
+</html>
+The <html> tag is called the Root Element.
+
+Why?
+
+Because every other HTML element is placed inside it.
+
+Example:
+
+<html>
+    ...
+</html>
+3. Head Section
+<head>
+</head>
+The head section contains information about the webpage.
+
+Examples:
+
+Title
+
+Meta Tags
+
+CSS Links
+
+Favicon
+
+Example:
+
+<head>
+    <title>HTML Class</title>
+</head>
+4. Title Tag
+<title>HTML Class</title>
+The title appears in the browser tab.
+
+Output:
+
+HTML Class
+(Shown on the browser tab)
+
+5. Body Section
+<body>
+</body>
+The body contains all visible content displayed on the webpage.
+
+Example:
+
+<body>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+</body>
+Root Element
+Definition:
+
+The top-most element of an HTML document.
+
+Example:
+
+<html>
+    <head></head>
+    <body></body>
+</html>
+Here:
+
+html
+is the Root Element.
+
+Parent Element
+Definition:
+
+An element that contains another element.
+
+Example:
+
+<body>
+    <h1>Hello</h1>
+</body>
+Here:
+
+body
+is the Parent Element.
+
+Child Element
+Definition:
+
+An element placed inside another element.
+
+Example:
+
+<body>
+    <h1>Hello</h1>
+</body>
+Here:
+
+h1
+is the Child Element of body.
+
+Parent and Child Relationship
+Example:
+
+<html>
+    <body>
+        <h1>Hello</h1>
+    </body>
+</html>
+Structure:
+
+html
+ └── body
+      └── h1
+html → Parent of body
+
+body → Child of html
+
+body → Parent of h1
+
+h1 → Child of body
+
+Container Elements
+Definition:
+
+Elements that can contain other elements inside them.
+
+Examples:
+
+<div>
+    <h1>Heading</h1>
+    <p>Paragraph</p>
+</div>
+Container Elements:
+
+html
+head
+body
+div
+section
+article
+nav
+header
+footer
+These tags can hold other tags.
+
+Non-Container Elements
+Definition:
+
+Elements that do not contain child elements.
+
+Examples:
+
+<img>
+<br>
+<hr>
+<input>
+These elements are usually self-closing or do not wrap other content.
+
+Nested Elements
+Definition:
+
+Elements placed inside another element.
+
+Example:
+
+<div>
+    <section>
+        <h1>HTML</h1>
+    </section>
+</div>
+Structure:
+
+div
+ └── section
+      └── h1
+This is called Nesting.
+
+HTML Document Tree
+Example:
+
+<html>
+    <head>
+        <title>HTML</title>
+    </head>
+
+    <body>
+        <h1>Welcome</h1>
+        <p>HTML Class</p>
+    </body>
+</html>
+Tree Structure:
+
+html
+├── head
+│    └── title
+│
+└── body
+     ├── h1
+     └── p
+The browser converts HTML into this tree structure called DOM (Document Object Model).
+
+Key Points
+HTML stands for HyperText Markup Language.
+
+HTML provides the structure of a webpage.
+
+<html> is the Root Element.
+
+<head> stores page information.
+
+<body> stores visible content.
+
+Parent elements contain child elements.
+
+Child elements exist inside parent elements.
+
+Container elements can contain other elements.
+
+Nested elements create a tree structure.
+
+Browser converts HTML into a DOM Tree.
+
+
+Interview Questions
+
+Q1. What is HTML?
+HTML stands for HyperText Markup Language and is used to create the structure of web pages.
+
+Q2. What is a Root Element?
+The <html> tag is called the Root Element because it contains all other HTML elements.
+
+Q3. What is a Parent Element?
+An element that contains another element.
+
+Q4. What is a Child Element?
+An element placed inside another element.
+
+Q5. What is a Container Element?
+An element that can contain other HTML elements inside it.
+
+Q6. What is the difference between Head and Body?
+Head contains webpage information, while Body contains visible webpage content.
+
+Q7. What is Nesting?
+Placing one HTML element inside another HTML element is called Nesting.
+
+Q8. What is DOM?
+DOM stands for Document Object Model. It is the tree structure created by the browser from HTML.

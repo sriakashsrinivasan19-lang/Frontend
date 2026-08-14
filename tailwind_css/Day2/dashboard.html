@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Dashboard — AI Learn Enterprise</title>
+    <meta name="description" content="Personalized learning analytics, course progression, assessment history, and technical credentials.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Enterprise Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body data-page="dashboard" class="bg-[#060813] text-slate-200 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-300 overflow-x-hidden min-h-screen relative">
+
+    <canvas id="neuralCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-30"></canvas>
+
+    <div class="glow-sphere w-96 h-96 bg-cyan-500/10 top-0 left-1/4"></div>
+    <div class="glow-sphere w-96 h-96 bg-purple-600/10 top-1/2 right-10"></div>
+
+    <!-- GLOBAL NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav" id="globalNavbar"></header>
+
+    <main class="relative z-10 pt-28 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10 pb-6 border-b border-white/10">
+                <div>
+                    <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Enterprise Telemetry</span>
+                    <h1 class="text-3xl font-display font-extrabold text-white mt-1">Student Performance Dashboard</h1>
+                    <p class="text-xs text-slate-400 mt-1">Real-time completion tracking, assessment history & credentials</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="courses.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold text-xs shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all">
+                        Browse New Courses
+                    </a>
+                </div>
+            </div>
+
+            <!-- Top Analytics Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Left: Circular Progress Radial Gauge -->
+                <div class="lg:col-span-4 glass-panel p-6 rounded-3xl border border-white/10 flex flex-col items-center justify-center text-center shadow-xl">
+                    <div class="relative w-44 h-44 flex items-center justify-center mb-4">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent"/>
+                            <circle id="dashProgressCircle" cx="50" cy="50" r="40" stroke="url(#dashProgressGradient)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="163.28" stroke-linecap="round" fill="transparent" class="transition-all duration-1000"/>
+                            <defs>
+                                <linearGradient id="dashProgressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#00f2fe"/>
+                                    <stop offset="100%" stop-color="#a855f7"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute flex flex-col items-center">
+                            <span class="text-3xl font-display font-bold text-white" id="dashProgressPercent">35%</span>
+                            <span class="text-[10px] font-mono text-slate-400 uppercase">Curriculum Path</span>
+                        </div>
+                    </div>
+                    <h4 class="font-display font-bold text-white text-base">Foundation Track Active</h4>
+                    <p class="text-xs text-slate-400 mt-1">Enterprise Telemetry Synced</p>
+                </div>
+
+                <!-- Right: 4 Metric Cards -->
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-cyan-400/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-400/10 text-cyan-400 flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-display font-bold text-white" id="dashLessonsCount">8</p>
+                            <p class="text-xs text-slate-400 mt-0.5 font-medium">Lessons Done</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-blue-400/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-blue-400/10 text-blue-400 flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-display font-bold text-cyan-400" id="dashTopicsCount">12</p>
+                            <p class="text-xs text-slate-400 mt-0.5 font-medium">Domains Mastered</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-purple-400/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-purple-400/10 text-purple-400 flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4a5 5 0 005 5h4a5 5 0 005-5V3M5 3h14M5 3H3m16 0h2M12 12v6m-4 3h8"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-display font-bold text-purple-400" id="dashAvgScore">85%</p>
+                            <p class="text-xs text-slate-400 mt-0.5 font-medium">Avg Assessment</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-pink-400/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-pink-400/10 text-pink-400 flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-display font-bold text-pink-400" id="dashStreak">5 Days</p>
+                            <p class="text-xs text-slate-400 mt-0.5 font-medium">Active Streak</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Sections (Active Courses & Assessment Telemetry History) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Enrolled Courses -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="text-lg font-display font-bold text-white flex items-center gap-2">
+                        <span>Active Enrolled Courses</span>
+                    </h3>
+                    <div class="space-y-3" id="dashEnrolledList">
+                        <!-- Injected by DashboardController.js -->
+                    </div>
+                </div>
+
+                <!-- Assessment History -->
+                <div class="lg:col-span-5 space-y-4">
+                    <h3 class="text-lg font-display font-bold text-white flex items-center gap-2">
+                        <span>Recent Assessment Logs</span>
+                    </h3>
+                    <div class="space-y-3" id="dashAssessmentHistory">
+                        <!-- Injected by DashboardController.js -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="bg-[#060813] border-t border-white/10 relative z-10 pt-16 pb-12" id="globalFooter"></footer>
+
+    <!-- MVC ARCHITECTURE SCRIPTS -->
+    <script src="assets/js/views/UIComponents.js"></script>
+    <script src="assets/js/views/ParticleCanvas.js"></script>
+    <script src="assets/js/models/CourseModel.js"></script>
+    <script src="assets/js/services/StorageService.js"></script>
+    <script src="assets/js/controllers/NavigationController.js"></script>
+    <script src="assets/js/controllers/DashboardController.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+HTML Forms & Tables - Complete Notes
+
+HTML Table
+What is a Table?
+An HTML Table is used to display data in rows and columns.
+
+Tables are commonly used for:
+
+Student Details
+
+Employee Records
+
+Product Lists
+
+Marksheets
+
+Attendance Reports
+
+Invoice Data
+
+Reports
+
+Banking Transactions
+
+Why Do We Use Tables?
+Tables organize data in a structured format, making it easy for users to read, compare, and understand information.
+
+Example:
+
+Student ID | Name | Course | Marks
+Instead of displaying information randomly, tables arrange the data neatly into rows and columns.
+
+Basic Table Syntax
+<table>
+
+</table>
+Everything related to the table should be placed inside the <table> tag.
+
+HTML Table Structure
+<table>
+
+    <thead>
+
+    </thead>
+
+    <tbody>
+
+    </tbody>
+
+    <tfoot>
+
+    </tfoot>
+
+</table>
+Table Elements
+table
+Defines the complete table.
+
+<table>
+
+</table>
+thead
+Represents the table header.
+
+Purpose:
+
+Stores column headings.
+
+Example:
+
+<thead>
+
+</thead>
+tbody
+Represents the table body.
+
+Purpose:
+
+Stores actual records.
+
+Example:
+
+<tbody>
+
+</tbody>
+tfoot
+Represents the table footer.
+
+Purpose:
+
+Stores totals, summaries, or footer information.
+
+Example:
+
+<tfoot>
+
+</tfoot>
+tr
+Represents a table row.
+
+Example
+
+<tr>
+
+</tr>
+Every row in a table is created using <tr>.
+
+th
+Represents a table heading.
+
+Example
+
+<th>Student Name</th>
+Characteristics:
+
+Bold Text
+
+Center Aligned
+
+Used inside <thead>
+
+td
+Represents table data.
+
+Example
+
+<td>Rahul</td>
+Stores actual values.
+
+Table Structure Example
+table
+│
+├── thead
+│      └── tr
+│            ├── th
+│            ├── th
+│            └── th
+│
+├── tbody
+│      ├── tr
+│      │      ├── td
+│      │      ├── td
+│      │      └── td
+│      │
+│      └── tr
+│
+└── tfoot
+Table Attributes
+border
+Adds border around the table.
+
+<table border="1">
+cellpadding
+Adds space inside each table cell.
+
+<table cellpadding="10">
+cellspacing
+Adds space between cells.
+
+<table cellspacing="5">
+width
+Sets table width.
+
+<table width="800">
+or
+
+<table width="100%">
+height
+Sets table height.
+
+<table height="300">
+align
+Aligns the table.
+
+<table align="center">
+bgcolor (Deprecated)
+Changes table background color.
+
+<table bgcolor="lightblue">
+td Attributes
+colspan
+Merges multiple columns.
+
+<td colspan="3">
+rowspan
+Merges multiple rows.
+
+<td rowspan="2">
+align
+Aligns text.
+
+<td align="center">
+valign
+Vertical alignment.
+
+<td valign="middle">
+Form
+What is a Form?
+A Form is used to collect information from users and send it to the server.
+
+Examples
+
+Login
+
+Registration
+
+Contact Form
+
+Feedback
+
+Job Application
+
+Admission Form
+
+Basic Form Syntax
+<form>
+
+</form>
+Form Attributes
+action
+Specifies where form data is sent.
+
+<form action="register.php">
+method
+Specifies how data is sent.
+
+<form method="post">
+Values
+
+GET
+POST
+enctype
+Used while uploading files.
+
+<form enctype="multipart/form-data">
+autocomplete
+Turns browser suggestions ON/OFF.
+
+autocomplete="on"
+
+autocomplete="off"
+novalidate
+Disables HTML validation.
+
+<form novalidate>
+Form Elements
+label
+Displays label for input.
+
+<label>Name</label>
+input
+Used to receive user input.
+
+<input type="text">
+textarea
+Multi-line input.
+
+<textarea></textarea>
+select
+Dropdown menu.
+
+<select>
+
+</select>
+option
+Dropdown options.
+
+<option>HTML</option>
+button
+Button element.
+
+<button>Save</button>
+Input Types Used
+text
+
+email
+
+password
+
+tel
+
+number
+
+radio
+
+checkbox
+
+file
+
+submit
+Input Attributes Used
+id
+Unique identification.
+
+id="username"
+name
+Used to send data to server.
+
+name="username"
+placeholder
+Displays hint.
+
+placeholder="Enter Name"
+required
+Mandatory field.
+
+required
+minlength
+Minimum characters.
+
+minlength="10"
+maxlength
+Maximum characters.
+
+maxlength="10"
+value
+Default value.
+
+value="HTML"
+Radio Button
+Allows only one selection.
+
+Example
+
+<input type="radio" name="gender">
+All radio buttons should have the same name.
+
+Checkbox
+Allows multiple selections.
+
+Example
+
+<input type="checkbox">
+Select Dropdown
+<select>
+
+<option>Select One</option>
+
+<option>HTML</option>
+
+<option>CSS</option>
+
+</select>
+Textarea
+Used for large text.
+
+Example
+
+<textarea rows="5" cols="30">
+
+</textarea>
+File Upload
+<input type="file">
+Requires
+
+enctype="multipart/form-data"
+Submit Button
+<input type="submit">
+or
+
+<button type="submit">
+
+Submit
+
+</button>
+Form Structure
+form
+│
+├── label
+├── input
+├── label
+├── input
+├── radio
+├── checkbox
+├── select
+│      └── option
+├── textarea
+├── file
+└── submit
+Difference Between Table and Form
+Table
+
+Form
+
+Displays Data
+
+Collects Data
+
+Rows & Columns
+
+Input Fields
+
+Used for Reports
+
+Used for Registration
+
+Read Only
+
+User Interaction
+
+<table>
+
+<form>
+
+Real-Time Uses
+Tables
+Employee List
+
+Student Attendance
+
+Marksheet
+
+Salary Report
+
+Product List
+
+Invoice
+
+Forms
+Login Page
+
+Registration Page
+
+Contact Form
+
+Feedback Form
+
+Online Payment
+
+Online Admission
+
+Interview Questions
+What is a Table?
+A table is used to display data in rows and columns.
+
+What is the Difference Between th and td?
+th → Table Heading
+
+td → Table Data
+What is the Purpose of thead?
+Stores column headings.
+
+What is tbody?
+Stores actual table records.
+
+What is colspan?
+Used to merge multiple columns.
+
+What is rowspan?
+Used to merge multiple rows.
+
+What is cellpadding?
+Space inside table cells.
+
+What is cellspacing?
+Space between table cells.
+
+What is a Form?
+A form is used to collect user information.
+
+Difference Between GET and POST?
+GET
+
+Data visible in URL
+
+POST
+
+Data hidden
+
+Difference Between Radio and Checkbox?
+Radio
+
+Single selection
+
+Checkbox
+
+Multiple selections
+
+Why is enctype="multipart/form-data" used?
+It is used when uploading files using the <input type="file"> element.

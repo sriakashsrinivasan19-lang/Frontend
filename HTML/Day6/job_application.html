@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+</head>
+<body>
+
+    <h1 align="center">Job Application Form</h1>
+
+    <form action="#" method="post">
+
+        <!-- Full Name -->
+        <label for="fullname">Full Name:</label><br>
+        <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required>
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email Address:</label><br>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required>
+        <br><br>
+
+        <!-- Phone -->
+        <label for="phone">Phone Number:</label><br>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required>
+        <br><br>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label><br>
+        <input
+            type="date"
+            id="dob"
+            name="dob"
+            required>
+        <br><br>
+
+        <!-- Gender -->
+        <label>Gender:</label><br>
+
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+
+        <br><br>
+
+        <!-- Address -->
+        <label for="address">Address:</label><br>
+
+        <textarea
+            id="address"
+            name="address"
+            rows="4"
+            cols="40"
+            placeholder="Enter your address"
+            required>
+        </textarea>
+
+        <br><br>
+
+        <!-- Qualification -->
+        <label for="qualification">Highest Qualification:</label><br>
+
+        <select id="qualification" name="qualification" required>
+
+            <option value="">--Select Qualification--</option>
+            <option value="SSLC">SSLC</option>
+            <option value="HSC">HSC</option>
+            <option value="Diploma">Diploma</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="B.E">B.E</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Sc">M.Sc</option>
+            <option value="MCA">MCA</option>
+
+        </select>
+
+        <br><br>
+
+        <!-- Skills -->
+        <label>Technical Skills:</label><br>
+
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label><br>
+
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label><br>
+
+        <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+        <label for="javascript">JavaScript</label><br>
+
+        <input type="checkbox" id="python" name="skills" value="Python">
+        <label for="python">Python</label><br>
+
+        <input type="checkbox" id="java" name="skills" value="Java">
+        <label for="java">Java</label>
+
+        <br><br>
+
+        <!-- Experience -->
+        <label for="experience">Years of Experience:</label><br>
+
+        <input
+            type="number"
+            id="experience"
+            name="experience"
+            min="0"
+            max="40"
+            placeholder="Enter experience">
+        <br><br>
+
+        <!-- Resume Upload -->
+        <label for="resume">Upload Resume:</label><br>
+
+        <input
+            type="file"
+            id="resume"
+            name="resume"
+            required>
+
+        <br><br>
+
+        <!-- Position -->
+        <label for="position">Applying For:</label><br>
+
+        <select id="position" name="position">
+
+            <option value="">--Select Position--</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Full Stack Developer</option>
+            <option>UI/UX Designer</option>
+            <option>Software Tester</option>
+
+        </select>
+
+        <br><br>
+
+        <!-- Joining Date -->
+        <label for="joining">Available Joining Date:</label><br>
+
+        <input
+            type="date"
+            id="joining"
+            name="joining">
+
+        <br><br>
+
+        <!-- Cover Letter -->
+        <label for="cover">Cover Letter:</label><br>
+
+        <textarea
+            id="cover"
+            name="cover"
+            rows="6"
+            cols="40"
+            placeholder="Write about yourself">
+        </textarea>
+
+        <br><br>
+
+        <!-- Terms -->
+        <input
+            type="checkbox"
+            id="agree"
+            required>
+
+        <label for="agree">
+            I confirm that all the information provided is true.
+        </label>
+
+        <br><br>
+
+        <!-- Buttons -->
+        <input type="submit" value="Apply Now">
+        <input type="reset" value="Clear Form">
+
+    </form>
+
+</body>
+</html>

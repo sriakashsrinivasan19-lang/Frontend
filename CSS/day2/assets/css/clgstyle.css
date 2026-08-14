@@ -1,0 +1,25 @@
+body {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+.department {
+    background-color: lightblue;
+    color: black;
+    width: 250px;
+    height: 80px;
+    margin: 15px auto;
+    line-height: 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+#cse {
+    background-color: navy;
+    color: white;
+}

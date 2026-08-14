@@ -1,0 +1,7 @@
+Semantic Tags
+✅ Block Level Elements
+✅ Inline Elements
+✅ Anchor Tags
+✅ Image Tags
+✅ Ordered Lists
+✅ Unordered Lists

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form & tables</title>
+</head>
+<body>
+    <header>
+        <div>
+            <center>
+            <h1>Apollo Hospital</h1>
+                <h2>Patient Registration Form</h2>
+            </center>
+        </div>
+    </header>
+    <section>
+        <center>
+            <form>
+            <label for="id">Patient Id</label>
+            <input type="text" id="id" placeholder="enter your Id" required><br/>
+            <label for="name">Patient Name</label>
+            <input type="text" id="name" placeholder="Enter your name"  required><br/>
+            <label for="age">age</label>
+            <input type="tel" id="age" placeholder="enter your age" required><br/>
+           <label for="gender">Gender</label>
+            <input type="radio" id="gender" >male
+            <input type="radio" id="gender" >female <br>
+          <label for="bg">Blood Group</label>
+            <select>
+            <option value=""">--Select One--</option>
+            <option value="">O+</option>
+            <option value="">O-</option>
+            <option value="">A+</option>
+            <option value="">A-</option>
+          </select><br/>
+          
+            <label for="doc">Doctor</label>
+            <input type="text" id="doc" placeholder="enter the doctor name" required><br/>
+            <label for="ap date">Appointment Date</label>
+            <input type="date" id="ap date" ><br/>
+            <label for="symptoms">Symptoms</label>
+            <input type="text" id="symptoms" placeholder="enter your symptoms" required><br/>
+          
+            
+            <label for="image">Medical Report</label>
+            <input type="file" name="" id="image"><br/>
+            
+            
+
+          
+            <button>Submit</button>
+            <button>Reset</button>
+            </form>
+        </div>
+        </center>
+    </section><br/><br/>
+    <section>
+        <div>
+            <center>
+                <div>
+                    <h2>Patient Information</h2>
+                </div>
+            <table border="2">
+                <thead>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Doctor</th>
+                    <th>Blood Group</th>
+                    <th>Appointment Date</th>
+                    <th>status</th>
+                </thead>
+                <tbody>
+                 <tr>
+                    <td>01</td>
+                    <td>Sri</td>
+                    <td>Jegatheesan</td>
+                    <td>O+</td>
+                    <td>01-08-2026</td>
+                    <td>Active</td>
+                 </tr>
+                </tbody>
+                  <tr>
+                    <td>02</td>
+                    <td>Ram</td>
+                    <td>Srinivasan</td>
+                    <td>A+</td>
+                    <td>02-08-2026</td>
+                    <td>Active</td>
+                 </tr>
+                   <tr>
+                     <td>03</td>
+                    <td>mohan</td>
+                    <td>Rayaan</td>
+                    <td>A-</td>
+                    <td>03-08-2026</td>
+                    <td>Active</td>
+                 </tr>
+                   <tr>
+                   <td>04</td>
+                    <td>majid</td>
+                    <td>amarnath</td>
+                    <td>o-</td>
+                    <td>04-08-2026</td>
+                    <td>Active</td>
+                 </tr>
+            </table>
+            </center>
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,316 @@
+Block Level Elements, Inline Elements, Formatting Tags, Interactive Tags
+
+What are HTML Elements?
+HTML elements are used to structure and display content on a webpage.
+
+Elements are mainly divided into:
+
+1. Block Level Elements
+2. Inline Elements
+3. Formatting Elements
+4. Interactive Elements
+1. Block Level Elements
+Definition
+A block-level element always starts on a new line and occupies the full available width.
+
+Characteristics
+Starts on a new line.
+
+Takes full width by default.
+
+Can contain other block and inline elements.
+
+Used for page layout and content structure.
+
+Example
+<h1>HTML</h1>
+<p>Welcome to HTML</p>
+<div>Learning HTML</div>
+Output
+HTML
+
+Welcome to HTML
+
+Learning HTML
+Each element appears on a separate line.
+
+Common Block Level Elements
+<div>
+<p>
+<h1> to <h6>
+<section>
+<article>
+<header>
+<footer>
+<nav>
+<main>
+<aside>
+<form>
+Example
+<div>
+   <h1>Frontend Development</h1>
+   <p>HTML CSS JavaScript</p>
+</div>
+Why Use Block Elements?
+Creating sections
+
+Building layouts
+
+Grouping content
+
+Structuring webpages
+
+2. Inline Elements
+Definition
+Inline elements do not start on a new line.
+
+They occupy only the required width.
+
+Characteristics
+Stays in the same line.
+
+Takes only required space.
+
+Used inside text content.
+
+Example
+<p>
+   Welcome to <span>HTML</span> Training
+</p>
+Output
+Welcome to HTML Training
+Everything remains on the same line.
+
+Common Inline Elements
+<span>
+<a>
+<img>
+<strong>
+<b>
+<i>
+<em>
+<mark>
+<small>
+<sup>
+<sub>
+<label>
+Example
+<p>
+  Learn <strong>HTML</strong> and <em>CSS</em>
+</p>
+Block vs Inline
+Block Level
+
+Inline
+
+New Line
+
+Same Line
+
+Full Width
+
+Required Width
+
+Layout Structure
+
+Text Styling
+
+div, p, h1
+
+span, a, strong
+
+Example
+Block
+<h1>HTML</h1>
+<p>Paragraph</p>
+Output
+
+HTML
+
+Paragraph
+Inline
+<span>HTML</span>
+<span>CSS</span>
+<span>JS</span>
+Output
+
+HTML CSS JS
+3. Formatting Tags
+Formatting tags are used to style or emphasize text.
+
+b Tag
+Makes text bold.
+
+<b>HTML</b>
+Output:
+
+HTML
+(Bold)
+
+strong Tag
+Indicates important text.
+
+<strong>Important</strong>
+Output:
+
+Important
+(Bold + Semantic Meaning)
+
+i Tag
+Italic text.
+
+<i>HTML</i>
+em Tag
+Emphasized text.
+
+<em>HTML</em>
+mark Tag
+Highlights text.
+
+<mark>HTML</mark>
+small Tag
+Displays smaller text.
+
+<small>HTML</small>
+del Tag
+Deleted text.
+
+<del>500</del>
+Output:
+
+~~500~~
+ins Tag
+Inserted text.
+
+<ins>450</ins>
+Output:
+
+450
+(Underlined)
+
+sub Tag
+Subscript text.
+
+H<sub>2</sub>O
+Output:
+
+H₂O
+sup Tag
+Superscript text.
+
+x<sup>2</sup>
+Output:
+
+x²
+Formatting Tags Summary
+<b>
+<strong>
+<i>
+<em>
+<mark>
+<small>
+<del>
+<ins>
+<sub>
+<sup>
+4. Interactive Tags
+Interactive elements allow users to interact with the webpage.
+
+Anchor Tag
+Used for navigation.
+
+<a href="https://google.com">
+   Google
+</a>
+Button Tag
+Used to perform actions.
+
+<button>Click Me</button>
+Input Tag
+Used to collect user input.
+
+<input type="text">
+Select Tag
+Dropdown menu.
+
+<select>
+   <option>HTML</option>
+   <option>CSS</option>
+</select>
+Textarea Tag
+Multi-line input.
+
+<textarea></textarea>
+Details Tag
+Expandable content.
+
+<details>
+   <summary>Read More</summary>
+   HTML is a markup language.
+</details>
+Audio Tag
+Audio player.
+
+<audio controls>
+</audio>
+Video Tag
+Video player.
+
+<video controls>
+</video>
+Common Interactive Tags
+<a>
+<button>
+<input>
+<select>
+<option>
+<textarea>
+<details>
+<summary>
+<audio>
+<video>
+<form>
+Interview Questions
+1. What is a Block Level Element?
+A block-level element starts on a new line and occupies the full width available.
+
+2. Name Five Block Level Elements.
+div
+p
+h1
+section
+article
+3. What is an Inline Element?
+An inline element does not start on a new line and occupies only the required width.
+
+4. Name Five Inline Elements.
+span
+a
+img
+strong
+em
+5. Difference Between Block and Inline Elements?
+Block → New Line + Full Width
+
+Inline → Same Line + Required Width
+6. What is the Difference Between b and strong?
+b → Visual Bold
+
+strong → Important Text + Semantic Meaning
+7. What is the Difference Between i and em?
+i → Italic Text
+
+em → Emphasized Text with Meaning
+8. What is the Purpose of mark Tag?
+Used to highlight text.
+
+9. What is an Interactive Element?
+Elements that allow users to interact with a webpage.
+
+10. Name Five Interactive Elements.
+a
+button
+input
+select
+textarea
+

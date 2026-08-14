@@ -1,0 +1,113 @@
+/* ==========================================================================
+   AI LEARN ENTERPRISE - MAIN STYLE SHEET (IT COMPANY MVC ARCHITECTURE)
+   ========================================================================== */
+
+/* Root Variables & Design Tokens */
+:root {
+    --bg-dark: #060813;
+    --bg-card: #0d1326;
+    --bg-surface: rgba(15, 23, 42, 0.75);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(0, 242, 254, 0.35);
+    
+    --cyan-accent: #00f2fe;
+    --blue-accent: #4facfe;
+    --purple-accent: #7928ca;
+    --violet-accent: #a855f7;
+    --pink-accent: #ff0080;
+    --emerald-accent: #10b981;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #060813;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Glassmorphic Panels */
+.glass-panel {
+    background: rgba(13, 19, 38, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+    background: rgba(18, 26, 51, 0.9);
+    border-color: rgba(0, 242, 254, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -10px rgba(0, 242, 254, 0.15);
+}
+
+.glass-nav {
+    background: rgba(6, 8, 19, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Typography & Gradients */
+.text-gradient {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+    background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ambient Radial Glows */
+.bg-radial-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(79, 172, 254, 0.14), transparent 60%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.12), transparent 50%),
+                radial-gradient(circle at 15% 70%, rgba(0, 242, 254, 0.09), transparent 50%);
+}
+
+.glow-sphere {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Cyber Technical Grid */
+.cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+.roadmap-line {
+    background: linear-gradient(180deg, #00f2fe 0%, #4facfe 35%, #7928ca 70%, #a855f7 100%);
+}
+
+/* Code Blocks & Terminal */
+.code-block {
+    background: #090d1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'JetBrains Mono', monospace;
+}

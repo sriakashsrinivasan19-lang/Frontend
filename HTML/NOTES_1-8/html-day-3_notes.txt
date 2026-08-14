@@ -1,0 +1,456 @@
+HTML Semantic Tags and Non-Semantic Tags
+
+What is a Semantic Tag?
+The word Semantic means "Meaning".
+
+Semantic tags clearly describe the purpose of the content inside them.
+
+When developers, browsers, search engines, and screen readers see a semantic tag, they can easily understand what kind of content it contains.
+
+Why Do We Use Semantic Tags?
+Before HTML5
+Developers mostly used:
+
+<div>
+<div>
+<div>
+<div>
+Everything was built using div tags.
+
+Problem:
+
+Difficult to understand the structure.
+
+Poor readability.
+
+Less SEO friendly.
+
+Accessibility issues.
+
+After HTML5
+Semantic tags were introduced.
+
+Example:
+
+<header>
+<nav></nav>
+</header>
+
+<main>
+    <section>
+        <article></article>
+    </section>
+</main>
+
+<footer></footer>
+Now the structure itself explains the content.
+
+Benefits of Semantic Tags
+1. Better Readability
+Developers can easily understand the code.
+
+2. Better SEO
+Search engines understand the webpage structure better.
+
+3. Better Accessibility
+Screen readers can identify page sections correctly.
+
+4. Easier Maintenance
+Large projects become easier to manage.
+
+Common Semantic Tags
+1. header
+Represents introductory content of a page or section.
+
+Example:
+
+<header>
+    <h1>SLA Institute</h1>
+</header>
+Uses:
+
+Logo
+
+Website Name
+
+Search Bar
+
+Navigation
+
+2. nav
+Represents navigation links.
+
+Example:
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Courses</a>
+</nav>
+Uses:
+
+Menus
+
+Navigation Links
+
+3. main
+Represents the primary content of the webpage.
+
+Example:
+
+<main>
+    <h1>React Training</h1>
+</main>
+Rules:
+
+Only one main tag per page.
+
+4. section
+Represents a logical section of content.
+
+Example:
+
+<section>
+    <h2>About Us</h2>
+    <p>We provide training.</p>
+</section>
+Uses:
+
+About Section
+
+Services Section
+
+Contact Section
+
+5. article
+Represents independent content.
+
+Example:
+
+<article>
+    <h2>React Tutorial</h2>
+    <p>Learn React Basics.</p>
+</article>
+Uses:
+
+Blog Posts
+
+News Articles
+
+Product Cards
+
+6. aside
+Represents related content.
+
+Example:
+
+<aside>
+    Advertisement
+</aside>
+Uses:
+
+Ads
+
+Sidebars
+
+Related Links
+
+7. footer
+Represents footer content.
+
+Example:
+
+<footer>
+    Copyright © 2026
+</footer>
+Uses:
+
+Copyright
+
+Contact Information
+
+Social Media Links
+
+8. figure
+Represents media content.
+
+Example:
+
+<figure>
+    <img src="image.jpg">
+</figure>
+9. figcaption
+Represents caption for media.
+
+Example:
+
+<figure>
+    <img src="image.jpg">
+    <figcaption>React Course</figcaption>
+</figure>
+Semantic Layout Example
+<header>
+    Logo
+</header>
+
+<nav>
+    Menu
+</nav>
+
+<main>
+
+    <section>
+
+        <article>
+            Blog Content
+        </article>
+
+    </section>
+
+    <aside>
+        Advertisement
+    </aside>
+
+</main>
+
+<footer>
+    Copyright
+</footer>
+Visual Structure
+header
+   │
+nav
+   │
+main
+ ┌─┴─────────┐
+ │           │
+section    aside
+ │
+article
+ │
+footer
+What is a Non-Semantic Tag?
+Non-semantic tags do not provide any meaning about the content.
+
+They are mainly used for layout and grouping purposes.
+
+Common Non-Semantic Tags
+div
+Most commonly used container element.
+
+Example:
+
+<div>
+    Welcome
+</div>
+Browser knows:
+
+Container
+Browser does NOT know:
+
+Header?
+Footer?
+Article?
+Navigation?
+span
+Inline container element.
+
+Example:
+
+<p>
+    Learn <span>HTML</span>
+</p>
+Browser only knows:
+
+Inline Container
+No meaning is provided.
+
+Semantic vs Non-Semantic
+Semantic
+
+Non-Semantic
+
+Meaningful
+
+No Meaning
+
+Better SEO
+
+Less SEO
+
+Better Accessibility
+
+Less Accessibility
+
+Easier to Read
+
+Harder to Understand
+
+header, nav, section
+
+div, span
+
+Example Without Semantic Tags
+<div>
+
+    <div>
+        Logo
+    </div>
+
+    <div>
+        Home About Contact
+    </div>
+
+    <div>
+
+        <div>
+            Blog Post
+        </div>
+
+        <div>
+            Advertisement
+        </div>
+
+    </div>
+
+    <div>
+        Footer
+    </div>
+
+</div>
+Problem:
+
+Difficult to understand.
+
+Example Using Semantic Tags
+<header>
+    Logo
+</header>
+
+<nav>
+    Home About Contact
+</nav>
+
+<main>
+
+    <article>
+        Blog Post
+    </article>
+
+    <aside>
+        Advertisement
+    </aside>
+
+</main>
+
+<footer>
+    Footer
+</footer>
+Easy to understand.
+
+Paragraph Tag
+What is Paragraph Tag?
+The paragraph tag is used to define textual content.
+
+Syntax:
+
+<p>
+    Content
+</p>
+Why Use Paragraph Tag?
+Used to:
+
+Display text.
+
+Group sentences.
+
+Improve readability.
+
+Example
+<p>
+    HTML is the standard markup language used to create webpages.
+</p>
+Multiple Paragraphs
+<p>
+    HTML provides structure.
+</p>
+
+<p>
+    CSS provides styling.
+</p>
+
+<p>
+    JavaScript provides functionality.
+</p>
+Each paragraph appears on a separate line.
+
+Paragraph is a Block-Level Element
+Example:
+
+<p>Paragraph One</p>
+<p>Paragraph Two</p>
+Output:
+
+Paragraph One
+
+Paragraph Two
+Paragraph with Formatting Tags
+<p>
+    Learn <strong>HTML</strong> and <em>CSS</em>.
+</p>
+Paragraph with Inline Tags
+<p>
+    Welcome to
+    <span>SLA Institute</span>
+</p>
+Paragraph Best Practices
+Good
+<p>
+    HTML is the foundation of web development.
+</p>
+Bad
+<p>
+<div>
+Content
+</div>
+</p>
+Do not place block-level elements inside paragraphs.
+
+Interview Questions
+
+1. What is a Semantic Tag?
+A semantic tag provides meaning about the content it contains.
+
+2. Why are Semantic Tags Important?
+Better SEO
+
+Better Accessibility
+
+Better Readability
+
+Better Maintainability
+
+3. Name Five Semantic Tags.
+header
+nav
+main
+section
+article
+4. Name Two Non-Semantic Tags.
+div
+span
+5. What is the Difference Between Semantic and Non-Semantic Tags?
+Semantic tags provide meaning while non-semantic tags do not provide meaning.
+
+6. What is the Purpose of the Paragraph Tag?
+The paragraph tag is used to display textual content in a structured manner.
+
+7. Is Paragraph a Block-Level Element?
+Yes.
+
+8. Which Tag Represents Main Content?
+<main>
+9. Which Tag Represents Navigation?
+<nav>
+10. Which Tag Represents Independent Content?
+<article>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form & tables</title>
+</head>
+<body>
+    <header>
+        <div>
+            <center>
+            <h1>The New College</h1>
+                <h2>Admission Form</h2>
+            </center>
+        </div>
+    </header>
+    <section>
+        <center>
+            <form>
+            <label for="name">Student Name</label>
+            <input type="text" id="name" placeholder="enter your name" required><br/>
+            <label for="father name">Father Name</label>
+            <input type="text" id="father name" placeholder="Enter your father name"  required><br/>
+            <label for="mother name">Mother Name</label>
+            <input type="text" id="mother name" placeholder="Enter your mother name"  required><br/>
+            
+            <label for="email">Email Id</label>
+            <input type="email" id="email" placeholder="enter your email" required><br/>
+            <label for="number">Phone NO</label>
+            <input type="tel" id="number" placeholder="enter your phone number" minlength="10" maxlength="10" required><br/>
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob"><br/>
+            <label for="gender">Gender</label>
+            <input type="radio" id="gender" >male
+            <input type="radio" id="gender" >female <br>
+            <label for="dept">Department</label>
+            <input type="text" id="dept" placeholder="enter your department" required><br/>
+            <label for="percent">Percentage</label>
+            <input type="number" id="percent" placeholder="enter your percentage" required><br/>
+            <label for="doc">Doctor</label>
+            <input type="text" id="doc" placeholder="enter the doctor name" required><br/>
+           <label for="address">Address</label>
+           <textarea name="" id="address" rows="6" cols="40"></textarea><br/>
+          
+            <label for="image">Passport Size Photo</label>
+            <input type="file" name="" id="image"><br/>
+        
+            <button>Submit</button>
+            <button>Reset</button>
+            </form>
+        </div>
+        </center>
+    </section><br/><br/>
+    <section>
+        <div>
+            <center>
+                <div>
+                    <h2>Application Information</h2>
+                </div>
+            <table border="2">
+                <thead>
+                    <th>Application ID</th>
+                    <th>student Name</th>
+                    <th>Department</th>
+                    <th>percentage</th>
+                    <th>Email</th>
+                    <th>Admission status</th>
+                </thead>
+                <tbody>
+                 <tr>
+                    <td>1011</td>
+                    <td>Sriakash</td>
+                    <td>Physics</td>
+                    <td>70</td>
+                    <td>sri@gmail.com</td>
+                    <td>Enrolled</td>
+                 </tr>
+                </tbody>
+                  <tr>
+                    <td>1012</td>
+                    <td>bhuvi</td>
+                    <td>Computer Science</td>
+                    <td>68</td>
+                    <td>bhuvi@gmail.com</td>
+                    <td>Enrolled</td>
+                 </tr>
+                   <tr>
+                     <td>1013</td>
+                    <td>mohan</td>
+                    <td>Commerce</td>
+                    <td>75</td>
+                    <td>mohan@gmail.com</td>
+                    <td>Enrolled</td>
+                 </tr>
+                   <tr>
+                   <td>1014</td>
+                    <td>majid</td>
+                    <td>chemistry</td>
+                    <td>72</td>
+                    <td>majid@gmail.com</td>
+                    <td>Enrolled</td>
+                 </tr>
+            </table>
+            </center>
+        </div>
+    </section>
+    
+</body>
+</html>

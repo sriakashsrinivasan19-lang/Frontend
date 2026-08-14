@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registration & Inventory Report</title>
+</head>
+<body>
+
+    <header>
+        <center>
+            <h1>ABC Super Market</h1>
+            <h2>Product Registration Form</h2>
+        </center>
+    </header>
+
+    <section>
+        <center>
+            <form>
+
+                <label for="pid">Product ID</label>
+                <input type="text" id="pid" placeholder="Enter Product ID" required>
+                <br><br>
+
+                <label for="pname">Product Name</label>
+                <input type="text" id="pname" placeholder="Enter Product Name" required>
+                <br><br>
+
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" placeholder="Enter Brand Name" required>
+                <br><br>
+
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="">--Select Category--</option>
+                    <option>Electronics</option>
+                    <option>Groceries</option>
+                    <option>Clothing</option>
+                    <option>Furniture</option>
+                    <option>Stationery</option>
+                </select>
+                <br><br>
+
+                <label for="price">Price</label>
+                <input type="number" id="price" placeholder="Enter Price" required>
+                <br><br>
+
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" placeholder="Enter Quantity" required>
+                <br><br>
+
+                <label for="supplier">Supplier</label>
+                <input type="text" id="supplier" placeholder="Enter Supplier Name" required>
+                <br><br>
+
+                <label for="image">Product Image</label>
+                <input type="file" id="image">
+                <br><br>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+
+            </form>
+        </center>
+    </section>
+
+    <br><br>
+
+    <section>
+        <center>
+
+            <h2>Inventory Report</h2>
+
+            <table border="2">
+
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Brand</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Stock Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>P101</td>
+                        <td>Laptop</td>
+                        <td>HP</td>
+                        <td>55000</td>
+                        <td>15</td>
+                        <td>In Stock</td>
+                    </tr>
+
+                    <tr>
+                        <td>P102</td>
+                        <td>Wireless Mouse</td>
+                        <td>Logitech</td>
+                        <td>850</td>
+                        <td>50</td>
+                        <td>In Stock</td>
+                    </tr>
+
+                    <tr>
+                        <td>P103</td>
+                        <td>LED Monitor</td>
+                        <td>Samsung</td>
+                        <td>12000</td>
+                        <td>8</td>
+                        <td>Low Stock</td>
+                    </tr>
+
+                    <tr>
+                        <td>P104</td>
+                        <td>Keyboard</td>
+                        <td>Dell</td>
+                        <td>1200</td>
+                        <td>0</td>
+                        <td>Out of Stock</td>
+                    </tr>
+
+                    <tr>
+                        <td>P105</td>
+                        <td>USB Pen Drive</td>
+                        <td>SanDisk</td>
+                        <td>650</td>
+                        <td>35</td>
+                        <td>In Stock</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </center>
+    </section>
+
+</body>
+</html>

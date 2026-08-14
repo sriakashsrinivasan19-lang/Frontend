@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <center>
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br />
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+        <br />
+        <label for="">rate of Service</label>
+        <select>
+            <option value="">select</option>
+            <option value="">good</option>
+            <option value="">average</option>
+            <option value="">poor</option>
+        </select><br />
+
+        <br />
+
+        <label for="category">Feedback Category:</label>
+
+        <select id="category" name="category">
+            <option value="">--Select Category--</option>
+            <option value="Website">Website</option>
+            <option value="Service">Service</option>
+            <option value="Support">Support</option>
+            <option value="Product">Product</option>
+        </select>
+
+        <br />
+        <textarea id="message" name="message" rows="6" cols="40" placeholder="Write your feedback here..." required> </textarea>
+        <br />
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+
+    </form>
+    </center>
+</body>
+</html>
