@@ -1,89 +1,448 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task based webpage</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-   
-</head>
-<body>
-    <header class="header">
-        <div>
-            <h1>FRONTEND WORK PAGE</h1>
-        </div>
+    <title>Frontend Work Page — Task Portal</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-        <div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>  
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#060813',
+                            card: '#0d1326',
+                            cyan: '#00f2fe',
+                            blue: '#4facfe',
+                            purple: '#7928ca',
+                            violet: '#a855f7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060813;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* Glassmorphic Cards */
+        .glass-panel {
+            background: rgba(13, 19, 38, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-panel-hover:hover {
+            background: rgba(18, 26, 51, 0.9);
+            border-color: rgba(0, 242, 254, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px -10px rgba(0, 242, 254, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-cyan/30 selection:text-brand-cyan min-h-screen flex flex-col justify-between relative cyber-grid">
+
+    <!-- Ambient Glowing Highlights -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="fixed bottom-10 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- ========================================================================= -->
+    <!-- HEADER & NAVBAR                                                           -->
+    <!-- ========================================================================= -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10 px-4 sm:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-blue to-brand-purple flex items-center justify-center p-0.5 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center text-brand-cyan">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg sm:text-xl text-white tracking-tight leading-none">
+                        FRONTEND <span class="text-gradient">WORK PAGE</span>
+                    </h1>
+                    <span class="text-[10px] text-slate-400 font-mono tracking-wider uppercase">SLA Fullstack Lab</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="flex items-center gap-1 sm:gap-2">
+                <a href="#home" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/30 transition-all flex items-center gap-1.5">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">About</a>
+                <a href="#contact" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
             </nav>
+
         </div>
     </header>
 
-    <main>
-        <section>
-            <div class="banner">
-                <img src="assets/TASK BASED WEBPAGE.png" alt="banner">
-            </div>
-        </section>
-        <section>
-            <div class="topic">
-                <h2>FRONTEND</h2>
-            </div>
-        </section>
-        <section class="container">
-            <div class="box">
-                <h2>HTML</h2>
-                <ul>
-                    <li><a href="HTML/day1">TASK1</a></li>
-                    <li><a href="HTML/Day2">TASK2</a></li>
-                    <li><a href="HTML/Day3">TASK3</a></li>
-                    <li><a href="HTML/Day4">TASK4</a></li>
-                    <li><a href="HTML/Day5">TASK5</a></li>
-                    <li><a href="HTML/Day6">TASK6</a></li>
-                    <li><a href="HTML/Day7">TASK7</a></li>
-                    <li><a href="HTML/Day8">TASK8</a></li>
-                    <li><a href="HTML/Day9">TASK9</a></li>
-                    <li><a href="HTML/Day9/">TASK10</a></li>
-                </ul>
-            </div>
-             <div class="box">
-                <h2>CSS</h2>
-                <ul>
-                    <li><a href="CSS/day1">TASK1</a></li>
-                    <li><a href="CSS/day2">TASK2</a></li>
-                    <li><a href="CSS/day3">TASK3</a></li>
-                    <li><a href="CSS/day4">TASK4</a></li>
-                    <li><a href="CSS/day5">TASK5</a></li>
-                    <li><a href="CSS/day6">TASK6</a></li>
-                    <li><a href="CSS/day7">TASK7</a></li>
-                    <li><a href="CSS/day8">TASK8</a></li>
-                    <li><a href="CSS/day9">TASK9</a></li>
-                    <li><a href="CSS/day10">TASK10</a></li>
+    <!-- ========================================================================= -->
+    <!-- MAIN CONTENT                                                              -->
+    <!-- ========================================================================= -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-12 relative z-10" id="home">
 
+        <!-- 1. Banner Section -->
+        <section class="w-full">
+            <div class="relative rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl p-6 sm:p-10 bg-gradient-to-r from-brand-card via-slate-900 to-brand-dark flex flex-col md:flex-row items-center justify-between gap-8">
+                
+                <div class="space-y-4 max-w-xl text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+                        <span>Daily Curriculum Tasks Tracker</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
+                        Task-Based <span class="text-gradient">Web Development</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Access all practical assignments, coding laboratories, and responsive layout projects organized systematically by technology.
+                    </p>
+                    <div class="flex items-center justify-center md:justify-start gap-4 pt-2 text-xs font-mono text-slate-400">
+                        <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">10 HTML Tasks</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">10 CSS Tasks</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">3 Bootstrap Tasks</span>
+                    </div>
+                </div>
 
-                </ul>
-            </div>
-             <div class="box">
-                <h2>BOOTSTRAP</h2>
-                <ul>
-                    <li><a href="bootstap/day1/">TASK1</a></li>
-                    <li><a href="bootstap/day2/">TASK2</a></li>
-                    <li><a href="bootstap/day3/">TASK3</a></li>
+                <!-- Banner Image with Fallback Decoration -->
+                <div class="w-full md:w-80 aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden glass-panel border border-white/15 flex items-center justify-center relative shadow-lg group">
+                    <img src="assets/TASK BASED WEBPAGE.png" alt="Task Based Webpage Banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'; document.getElementById('bannerFallback').style.display='flex';">
                     
-                </ul>
+                    <!-- Fallback placeholder if local image is not found -->
+                    <div id="bannerFallback" class="hidden absolute inset-0 bg-gradient-to-br from-brand-card to-slate-900 flex-col items-center justify-center p-6 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan flex items-center justify-center mb-3">
+                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        </div>
+                        <span class="font-display font-bold text-white text-sm">FRONTEND LABS</span>
+                        <span class="text-[11px] text-slate-400 font-mono mt-1">Assignments Hub</span>
+                    </div>
+                </div>
+
             </div>
         </section>
-        <section class="button">
-             <button >Go to Top</button>
+
+        <!-- 2. Topic Section Header -->
+        <section class="text-center space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-cyan px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 font-semibold">
+                Technology Stacks
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-white">
+                Core <span class="text-gradient">Frontend Modules</span>
+            </h2>
         </section>
-           
-       
-        <footer class="footer">
-            <div>&copy;2026| SLA Student Fullstack Developer</div>
-        </footer>
+
+        <!-- 3. Task Boxes Grid (HTML, CSS, BOOTSTRAP) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- HTML CARD -->
+            <div class="glass-panel p-6 rounded-3xl border border-orange-500/20 glass-panel-hover flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 px-3 py-1 bg-orange-500/10 text-orange-400 font-mono text-[10px] uppercase font-bold rounded-bl-xl border-l border-b border-orange-500/20">
+                    10 Tasks
+                </div>
+
+                <div>
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-mono font-bold text-sm">
+                            &lt;/&gt;
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-display font-bold text-white">HTML</h2>
+                            <p class="text-xs text-slate-400">Structure & Semantic Elements</p>
+                        </div>
+                    </div>
+
+                    <!-- Tasks List -->
+                    <ul class="grid grid-cols-2 gap-2 mb-4">
+                        <li>
+                            <a href="HTML/day1" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 01</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 1 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day2" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 02</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 2 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day3" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 03</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 3 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day4" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 04</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 4 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day5" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 05</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 5 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day6" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 06</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 6 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day7" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 07</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 7 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day8" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 08</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 8 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day9" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 09</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 9 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="HTML/Day9/" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-orange-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-orange-400 transition-all group">
+                                <span>TASK 10</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-orange-400">Day 10 →</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-3 border-t border-white/10 text-center">
+                    <span class="text-[11px] font-mono text-slate-400">HTML5 Living Standard Compliant</span>
+                </div>
+            </div>
+
+            <!-- CSS CARD -->
+            <div class="glass-panel p-6 rounded-3xl border border-blue-500/20 glass-panel-hover flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 px-3 py-1 bg-blue-500/10 text-blue-400 font-mono text-[10px] uppercase font-bold rounded-bl-xl border-l border-b border-blue-500/20">
+                    10 Tasks
+                </div>
+
+                <div>
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-mono font-bold text-sm">
+                            #{}
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-display font-bold text-white">CSS</h2>
+                            <p class="text-xs text-slate-400">Layouts, Flexbox & Grid</p>
+                        </div>
+                    </div>
+
+                    <!-- Tasks List -->
+                    <ul class="grid grid-cols-2 gap-2 mb-4">
+                        <li>
+                            <a href="CSS/day1" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 01</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 1 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day2" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 02</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 2 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day3" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 03</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 3 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day4" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 04</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 4 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day5" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 05</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 5 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day6" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 06</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 6 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day7" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 07</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 7 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day8" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 08</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 8 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day9" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 09</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 9 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="CSS/day10" class="p-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-blue-400 transition-all group">
+                                <span>TASK 10</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-blue-400">Day 10 →</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-3 border-t border-white/10 text-center">
+                    <span class="text-[11px] font-mono text-slate-400">Modern Responsive CSS3</span>
+                </div>
+            </div>
+
+            <!-- BOOTSTRAP CARD -->
+            <div class="glass-panel p-6 rounded-3xl border border-purple-500/20 glass-panel-hover flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 px-3 py-1 bg-purple-500/10 text-purple-400 font-mono text-[10px] uppercase font-bold rounded-bl-xl border-l border-b border-purple-500/20">
+                    3 Tasks
+                </div>
+
+                <div>
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-mono font-bold text-sm">
+                            B5
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-display font-bold text-white">BOOTSTRAP</h2>
+                            <p class="text-xs text-slate-400">Responsive Grid & UI Kit</p>
+                        </div>
+                    </div>
+
+                    <!-- Tasks List -->
+                    <ul class="space-y-2.5 mb-4">
+                        <li>
+                            <a href="bootstap/day1/" class="p-3 rounded-xl glass-panel border border-white/5 hover:border-purple-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-purple-400 transition-all group">
+                                <span>TASK 01</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-purple-400">Day 1 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bootstap/day2/" class="p-3 rounded-xl glass-panel border border-white/5 hover:border-purple-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-purple-400 transition-all group">
+                                <span>TASK 02</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-purple-400">Day 2 →</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bootstap/day3/" class="p-3 rounded-xl glass-panel border border-white/5 hover:border-purple-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-purple-400 transition-all group">
+                                <span>TASK 03</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-purple-400">Day 3 →</span>
+                            </a>
+                        </li>
+
+                         <li>
+                            <a href="tailwind_css/Day2/index.html" class="p-3 rounded-xl glass-panel border border-white/5 hover:border-purple-400/50 hover:bg-white/5 flex items-center justify-between text-xs font-mono text-slate-200 hover:text-purple-400 transition-all group">
+                                <span>Project Task</span>
+                                <span class="text-[10px] text-slate-500 group-hover:text-purple-400">Day 2 →</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-3 border-t border-white/10 text-center">
+                    <span class="text-[11px] font-mono text-slate-400">Bootstrap 5 Component Architecture</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 4. Go To Top Interactive Button -->
+        <section class="flex justify-center pt-6">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple text-white text-xs sm:text-sm font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group">
+                <svg class="w-4 h-4 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+                <span>Go to Top</span>
+            </button>
+        </section>
+
     </main>
+
+    <!-- ========================================================================= -->
+    <!-- FOOTER                                                                    -->
+    <!-- ========================================================================= -->
+    <footer class="glass-panel border-t border-white/10 py-6 px-4 text-center mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+            <p>&copy; 2026 | SLA Student Fullstack Developer</p>
+            <div class="flex items-center gap-4 text-[11px] font-mono">
+                <span class="text-brand-cyan">HTML5</span>
+                <span>•</span>
+                <span class="text-brand-blue">CSS3</span>
+                <span>•</span>
+                <span class="text-brand-purple">Bootstrap 5</span>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
