@@ -250,6 +250,7 @@ console.log(taxValue);
 let subValue = null;
 console.log(subValue);
 let initialValue = null;
+console.log(initialValue);
 
 // using undefined
 let projectValue;
