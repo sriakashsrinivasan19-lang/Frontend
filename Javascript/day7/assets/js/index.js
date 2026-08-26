@@ -23,7 +23,7 @@ for(let i = 0; i < _student.length; i++){
 }
 
 // find a student;
-let _target = "mohan";
+let _target = "";
 
 let studentName = [{name : "mohan" , age : 21, mark : 90}, {name : "sriram" , age : 25, mark : 80}, {name : "kiruthish" , age : 22, mark : 70}];
 for(let i = 0; i < studentName.length; i++){
