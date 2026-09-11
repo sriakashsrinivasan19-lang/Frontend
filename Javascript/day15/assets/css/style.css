@@ -1,0 +1,36 @@
+.hidden {
+    display: none;
+}
+
+
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.green {
+    background-color: green !important;
+}
+
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+}
+
+#details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#details.show {
+    max-height: 100px;
+}

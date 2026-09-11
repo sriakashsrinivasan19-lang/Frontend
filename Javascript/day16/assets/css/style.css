@@ -1,0 +1,46 @@
+#box {
+    width: 200px;
+    height: 100px;
+    background-color: lightgray;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box.active {
+
+    background-color: blue;
+    color: white;
+}
+
+
+#container {
+    width: 200px;
+    height: 100px;
+    background-color: lightgray;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container.active {
+    background-color: blue;
+    color: white;
+}
+
+
+#card {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+#card.dark {
+    background-color: black !important;
+    color: white !important;
+}
+
