@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Dashboard</h1>
+
+    <h2>User Details</h2>
+
+    <div id="userData"></div>
+
+    <script>
+
+        let user = JSON.parse(localStorage.getItem("user"));
+
+        document.getElementById("userData").innerHTML = `
+            <p>Name: ${user.name}</p>
+            <p>Email: ${user.email}</p>
+        `;
+
+    </script>
+
+</body>
+</html>
