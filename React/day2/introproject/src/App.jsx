@@ -1,29 +1,18 @@
+import Button1 from "./component/Button1.jsx"
+import Finput from "./component/Finput.jsx"
+import Card from "./component/Card.jsx"
+import "./App.css"
 const App = () =>{
   return(<> 
   
-  <div>
-   <h1>hello react</h1> 
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem in, cumque perspiciatis reiciendis delectus maxime fuga mollitia magnam aliquam. Temporibus illum doloremque provident sint et sed voluptatum error fuga tempore?</p>
-   <form >
-    <label>username</label>
-    <input type="text"  placeholder = "enter your name" />
-    <label>password</label>
-    <input type="password"  placeholder = "enter your password"  />
-   </form>
-      <Button/>
-  </div>
+  <Card />
+  <Finput /> <br />
+  <Button1 />
+
 
   </>)
 }
 
 export default App
 
-export const Button = ()=>{
-  return(<> 
-  
-  <div>
-    <button>click</button>
-  </div>
-  </>)
-}
 
