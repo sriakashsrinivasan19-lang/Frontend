@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+a{
+    text-decoration: none;
+}
+
+.Navbar{
+    display: flex;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: darkslategray;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Logo >img{
+    border-radius: 50px;
+    margin-left: 30px;
+}
+
+.Link>a{
+    color: aliceblue;
+
+}
+.Link{
+    gap: 20px;
+    display: flex;
+    margin-right: 30px;
+    
+
+}
+
+.ProductImage{
+
+    padding: 25px;
+    width: 200px;
+}
+
+.Product{
+    margin-top: 30px;
+    margin-left: 300px;
+    width : 500px;
+    height : 450px;
+    border-radius: 20px;
+background-color: rgb(129, 126, 125);
+    
+}
+
+.Btn>button{
+
+    background-color: brown;
+    border-radius: 20px;
+    padding: 15px;
+}

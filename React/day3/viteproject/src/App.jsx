@@ -1,16 +1,15 @@
-import NavBar from "./component/navbar"
+import NavBar from "./NavBar.jsx";
+import ProductCard from "./ProductCard.jsx";
 
-const App = ()=>{
-  return(<>
+const App = ()=> {
+  return (<>
   
+  <div>
 
   <NavBar />
-  <div>
-    <h1>This is my first React project</h1>
+  <ProductCard />
+
   </div>
-  
-  
   </>)
 }
-
 export default App
